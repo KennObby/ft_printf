@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static int	ft_putptr(void *ptr)
+int	ft_putptr(void *ptr)
 {
 	int	len;
 
@@ -22,7 +22,7 @@ static int	ft_putptr(void *ptr)
 	else
 	{
 		len += ft_putstr("0x");
-		len += ft_puthex_lower((unsigned long)ptr);
+		len += ft_puthex_lower((unsigned long long)ptr);
 	}
 	return (len);
 }

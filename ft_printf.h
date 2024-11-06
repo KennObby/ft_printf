@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <unistd.h>
@@ -19,15 +19,13 @@
 # include <stddef.h>
 # include <limits.h>
 
-int			ft_printf(const char *format, ...);
-
-int			ft_putchar(char c);
-int			ft_putnbr(int nb);
-int			ft_putunbr(unsigned int nb);
-int			ft_putstr(char *s);
-
-static int	ft_putptr(void *ptr);
-static int	ft_puthex_lower(unsigned long nb);
-static int	ft_puthex_upper(unsigned long nb);
+int		ft_printf(const char *format, ...);
+int		ft_putchar(char c);
+int		ft_putnbr(int nb);
+int		ft_putunbr(unsigned int nb);
+int		ft_putstr(char *s);
+int		ft_putptr(void *ptr);
+int		ft_puthex_lower(unsigned long long nb);
+int		ft_puthex_upper(unsigned long long nb);
 
 #endif

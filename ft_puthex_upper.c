@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	get_hex_char_upper(int remainder)
 {
@@ -20,7 +20,7 @@ int	get_hex_char_upper(int remainder)
 		return ('A' + (remainder - 10));
 }
 
-static int	ft_puthex_upper(unsigned long nb)
+int	ft_puthex_upper(unsigned long long nb)
 {
 	char	hex_digits[17];
 	int		i;
@@ -29,10 +29,13 @@ static int	ft_puthex_upper(unsigned long nb)
 	i = 0;
 	len = 0;
 	if (nb == 0)
+	{
+		ft_putchar('0');
 		return (1);
+	}
 	while (nb > 0)
 	{
-		hex_digits[i] = get_hex_char(nb % 16);
+		hex_digits[i] = get_hex_char_upper(nb % 16);
 		i++;
 		nb = nb / 16;
 	}

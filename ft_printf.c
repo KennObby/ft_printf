@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	get_args(va_list *args, char c)
 {
@@ -22,7 +22,7 @@ static int	get_args(va_list *args, char c)
 		len += ft_putchar('%');
 	}
 	else if (c == 'c')
-		len += ft_putchar(va_arg(*args, char));
+		len += ft_putchar(va_arg(*args, int));
 	else if (c == 's')
 		len += ft_putstr(va_arg(*args, char *));
 	else if (c == 'p')
@@ -32,9 +32,9 @@ static int	get_args(va_list *args, char c)
 	else if (c == 'u')
 		len += ft_putunbr(va_arg(*args, int));
 	else if (c == 'x')
-		len += ft_puthex_lower(va_arg(*args, int));
+		len += ft_puthex_lower(va_arg(*args, unsigned long long));
 	else if (c == 'X')
-		len += ft_puthex_upper(va_arg(*args, int));
+		len += ft_puthex_upper(va_arg(*args, unsigned long long));
 	return (len);
 }
 

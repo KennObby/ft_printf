@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include <stddef.h>
+#include "ft_printf.h"
 
 int	ft_putstr(char *s)
 {
@@ -22,7 +21,7 @@ int	ft_putstr(char *s)
 	i = 0;
 	while (s[i])
 	{
-		write(s[i]);
+		write(1, &s[i], 1);
 		i++;
 	}
 	return (i);

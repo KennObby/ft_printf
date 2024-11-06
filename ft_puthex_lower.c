@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	get_hex_char_lower(int remainder)
 {
@@ -20,7 +20,7 @@ int	get_hex_char_lower(int remainder)
 		return ('a' + (remainder - 10));
 }
 
-static int	ft_puthex_lower(unsigned long nb)
+int	ft_puthex_lower(unsigned long long nb)
 {
 	char	hex_digits[17];
 	int		i;
@@ -35,7 +35,7 @@ static int	ft_puthex_lower(unsigned long nb)
 	}
 	while (nb > 0)
 	{
-		hex_digits[i] = get_hex_char(nb % 16);
+		hex_digits[i] = get_hex_char_lower(nb % 16);
 		i++;
 		nb = nb / 16;
 	}

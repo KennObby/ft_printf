@@ -10,33 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static unsigned long	ft_abs_and_sign(int nb, int *len)
-{
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		(*len)++;
-		return ((unsigned long)(-nb));
-	}
-	return ((unsigned long)nb);
-}
-
-static int	ft_putnbr_rec(unsigned long nbr)
+static unsigned long long	ft_putnbr_rec(unsigned long nbr)
 {
 	if (nbr >= 10)
 		return (ft_putnbr_rec(nbr / 10) + ft_putchar('0' + (nbr % 10)));
 	return (ft_putchar('0' + nbr));
 }
 
-static int	ft_putnbr(int nb)
+int	ft_putnbr(int nb)
 {
-	int				len;
-	unsigned long	nbr;
+	int					len;
+	unsigned long long	nbr;
 
 	len = 0;
-	nbr = ft_abs_and_sign(nb, &len);
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putstr("2147483648");
+		return (11);
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		len++;
+		nbr = -((long long)nb);
+	}
+	else
+	{
+		nbr = nb;
+	}
 	len += ft_putnbr_rec(nbr);
 	return (len);
 }

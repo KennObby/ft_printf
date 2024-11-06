@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static char	ft_get_digit_char(int remainder)
 {
 	return ('0' + remainder);
 }
 
-static int	ft_putunbr(unsigned int nb)
+int	ft_putunbr(unsigned int nb)
 {
 	char	digits[10];
 	int		i;
