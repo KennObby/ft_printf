@@ -28,7 +28,7 @@ int	ft_puthex_upper(unsigned long long nb)
 
 	i = 0;
 	len = 0;
-	if (nb == 0)
+	if (nb <= 0)
 	{
 		ft_putchar('0');
 		return (1);

@@ -32,9 +32,11 @@ static int	get_args(va_list *args, char c)
 	else if (c == 'u')
 		len += ft_putunbr(va_arg(*args, int));
 	else if (c == 'x')
-		len += ft_puthex_lower(va_arg(*args, unsigned long long));
+		len += ft_puthex_lower((unsigned int)
+				va_arg(*args, unsigned long long));
 	else if (c == 'X')
-		len += ft_puthex_upper(va_arg(*args, unsigned long long));
+		len += ft_puthex_upper((unsigned int)
+				va_arg(*args, unsigned long long));
 	return (len);
 }
 
